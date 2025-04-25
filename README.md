@@ -1,8 +1,8 @@
-#Overview
+*Overview*
 
 This project automates the process of extracting data from Google Drive, processing it using Python, storing it in a PostgreSQL database, and visualizing the results in Power BI. The pipeline is orchestrated using Apache Airflow and containerized with Docker for scalability and ease of deployment.
 
-#Tools Used
+*Tools Used*
 
 **Python** : Version 3.8
 
