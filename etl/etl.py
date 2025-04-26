@@ -2,6 +2,7 @@ import datetime
 import glob
 import os
 
+import gdown
 import pandas as pd
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, inspect, text
@@ -14,6 +15,13 @@ db_host = os.getenv("DB_HOST", "postgres")
 db_port = os.getenv("DB_PORT", "5432")
 db_name = os.getenv("DB_NAME", "airflow")
 
+# db_user = os.getenv("DB_USER")
+# db_password = os.getenv("DB_PASSWORD")
+# db_host = os.getenv("DB_HOST")
+# db_port = os.getenv("DB_PORT")
+# db_name = os.getenv("DB_NAME")
+
+
 postgres_url = f"postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 engine = create_engine(postgres_url)
@@ -25,7 +33,10 @@ with engine.connect() as conn:
     print("Tables in the database:", inspector.get_table_names())
 
 
-list_csv = glob.glob('./*data*/*.csv')
+url = 'https://drive.google.com/drive/folders/1_8tzTD1BHaAa1joaCd5mAKvxQxDwiF6k'
+output = '../ml-100k-data'
+gdown.download_folder(url, output=output, quiet=False, use_cookies=False)
+list_csv = glob.glob('../*data*/*.csv')
 
 # Set incremental table and column
 incremental_table = 'item_movie_lens'
