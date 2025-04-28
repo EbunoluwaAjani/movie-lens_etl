@@ -6,7 +6,7 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__) + '/../'))
-from etl.etl import load
+from etl.etl import download_data, load
 
 default_args = {
     'owner': 'airflow',
@@ -19,16 +19,23 @@ default_args = {
 }
 
 dag = DAG(
-    'my_dag',
-    default_args=default_args,
-    description='dec_beginner_project',
+    dag_id='my_dag',
+    description ='dec_beginner_project',
+    default_args = default_args,
+    schedule_interval = '@daily'
 )
 
-load = load
-task1 = PythonOperator(
+extract_task = PythonOperator(
+    task_id='extract',
+    python_callable=download_data,
+    dag = dag
+    )
+
+load_task = PythonOperator(
     task_id='movie_lens',
     python_callable=load,
     dag=dag,
 )
 
-task1
+
+extract_task >> load_task

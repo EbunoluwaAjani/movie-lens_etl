@@ -15,12 +15,6 @@ db_host = os.getenv("DB_HOST", "postgres")
 db_port = os.getenv("DB_PORT", "5432")
 db_name = os.getenv("DB_NAME", "airflow")
 
-# db_user = os.getenv("DB_USER")
-# db_password = os.getenv("DB_PASSWORD")
-# db_host = os.getenv("DB_HOST")
-# db_port = os.getenv("DB_PORT")
-# db_name = os.getenv("DB_NAME")
-
 
 postgres_url = f"postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
@@ -33,17 +27,24 @@ with engine.connect() as conn:
     print("Tables in the database:", inspector.get_table_names())
 
 
-url = 'https://drive.google.com/drive/folders/1_8tzTD1BHaAa1joaCd5mAKvxQxDwiF6k'
-output = '../ml-100k-data'
-gdown.download_folder(url, output=output, quiet=False, use_cookies=False)
-list_csv = glob.glob('../*data*/*.csv')
-
 # Set incremental table and column
 incremental_table = 'item_movie_lens'
 incremental_column = 'release_date'
 
 
-# Get latest release_date from DB
+def download_data():
+    url = 'https://drive.google.com/drive/folders/1_8tzTD1BHaAa1joaCd5mAKvxQxDwiF6k'
+    output = '../ml-100k-data'
+    gdown.download_folder(url, output=output, quiet=False, use_cookies=False)
+    print("Data downloaded.")
+
+list_csv =  glob.glob('../*data*/*.csv') 
+def extract(list_csv):
+    for file in list_csv:
+        df = pd.read_csv(file)
+        table_name = os.path.splitext(os.path.basename(file))[0]
+        yield table_name, df
+        
 def get_latest_release_date(table_name, column_name):
     try:
         with engine.connect() as conn:
@@ -54,27 +55,6 @@ def get_latest_release_date(table_name, column_name):
     except Exception as e:
         print(f"Error fetching latest {column_name} from {table_name}: {e}")
         return pd.Timestamp.min
-
-
-def get_run_date(df):
-    df[incremental_column] = pd.to_datetime(df[incremental_column], errors='coerce')
-    if df[incremental_column].isna().all():
-        raise ValueError("No valid release_date values found.")
-    start_date = df[incremental_column].min()
-    end_date = df[incremental_column].max()
-    print(f"Generating dates from {start_date.date()} to {end_date.date()}")
-    return [
-        (start_date + timedelta(days=i)).strftime("%Y-%m-%d")
-        for i in range((end_date - start_date).days + 1)
-    ]
-
-
-def extract(list_csv=list_csv):
-    for file in list_csv:
-        df = pd.read_csv(file)
-        table_name = os.path.splitext(os.path.basename(file))[0]
-        yield table_name, df
-
 
 def transform():
     for table_name, df in extract(list_csv):
@@ -95,7 +75,6 @@ def transform():
 
                 # Drop duplicates based on unique key columns (customize as needed)
                 df = df.drop_duplicates(subset=['movie_id'])
-
                 print(f"{table_name}: Filtered to {len(df)} new unique rows after {latest_date}")
 
         except Exception as e:
@@ -131,5 +110,3 @@ def load():
         except Exception as e:
             print(f"Error loading {table_name}: {e}")
 
-
-load()
