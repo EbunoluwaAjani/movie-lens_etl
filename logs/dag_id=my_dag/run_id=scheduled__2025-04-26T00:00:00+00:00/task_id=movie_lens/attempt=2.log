@@ -1,0 +1,16 @@
+[2025-04-28T11:10:10.543+0000] {logging_mixin.py:188} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=scheduled__2025-04-26T00:00:00+00:00/task_id=movie_lens permission to 509
+[2025-04-28T11:10:10.950+0000] {logging_mixin.py:188} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=scheduled__2025-04-26T00:00:00+00:00/task_id=movie_lens permission to 509
+[2025-04-28T11:10:11.089+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: my_dag.movie_lens scheduled__2025-04-26T00:00:00+00:00 [queued]>
+[2025-04-28T11:10:11.106+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: my_dag.movie_lens scheduled__2025-04-26T00:00:00+00:00 [queued]>
+[2025-04-28T11:10:11.107+0000] {taskinstance.py:2171} INFO - Starting attempt 2 of 2
+[2025-04-28T11:10:11.201+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): movie_lens> on 2025-04-26 00:00:00+00:00
+[2025-04-28T11:10:11.208+0000] {standard_task_runner.py:60} INFO - Started process 212 to run task
+[2025-04-28T11:10:11.243+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'movie_lens', 'scheduled__2025-04-26T00:00:00+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/movie_dags.py', '--cfg-path', '/tmp/tmpgz4yvv24']
+[2025-04-28T11:10:11.246+0000] {standard_task_runner.py:88} INFO - Job 40: Subtask movie_lens
+[2025-04-28T11:10:11.485+0000] {logging_mixin.py:188} INFO - Changing /opt/***/logs/dag_id=my_dag/run_id=scheduled__2025-04-26T00:00:00+00:00/task_id=movie_lens permission to 509
+[2025-04-28T11:10:11.492+0000] {task_command.py:423} INFO - Running <TaskInstance: my_dag.movie_lens scheduled__2025-04-26T00:00:00+00:00 [running]> on host 863f6bb52b9f
+[2025-04-28T11:10:11.866+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='my_dag' AIRFLOW_CTX_TASK_ID='movie_lens' AIRFLOW_CTX_EXECUTION_DATE='2025-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-26T00:00:00+00:00'
+[2025-04-28T11:10:11.871+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-28T11:10:11.902+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=my_dag, task_id=movie_lens, execution_date=20250426T000000, start_date=20250428T111011, end_date=20250428T111011
+[2025-04-28T11:10:12.011+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-28T11:10:12.109+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check
