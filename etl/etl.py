@@ -3,6 +3,7 @@ import glob
 import logging
 import os
 
+
 import gdown
 import pandas as pd
 from dotenv import load_dotenv
@@ -53,7 +54,7 @@ incremental_column = "release_date"
 def download_data():
     """Download data from Google Drive."""
     url = "https://drive.google.com/drive/folders/1_8tzTD1BHaAa1joaCd5mAKvxQxDwiF6k"
-    output = '../ml-100k-data'
+    output = "../ml-100k-data"
     try:
         gdown.download_folder(url, output=output, quiet=False, use_cookies=False)
         logging.info("Data downloaded successfully.")
@@ -153,7 +154,6 @@ def load():
                 logging.info(f"{table_name} fully reloaded with {len(df)} rows.")
         except Exception as e:
             logging.error(f"Error loading {table_name}: {e}")
-
 
 if __name__ == "__main__":
     logging.info("Starting ETL process...")

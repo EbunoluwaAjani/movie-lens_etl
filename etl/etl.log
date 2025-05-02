@@ -13,3 +13,23 @@
 2025-04-28 16:23:08,479 - INFO - Extracted data from file: ../ml-100k-data/user_movie_lens.csv
 2025-04-28 16:23:08,565 - INFO - user_movie_lens fully reloaded with 943 rows.
 2025-04-28 16:23:08,566 - INFO - ETL process completed successfully.
+2025-04-30 17:16:37,253 - INFO - Connected to DB: ('PostgreSQL 16.8 (Ubuntu 16.8-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit',)
+2025-04-30 17:16:37,283 - INFO - Tables in the database: ['global_housing', 'data_movie_lens', 'item_movie_lens', 'user_movie_lens']
+2025-04-30 17:16:37,291 - INFO - Starting ETL process...
+2025-04-30 17:16:54,677 - INFO - Data downloaded successfully.
+2025-04-30 17:16:54,679 - ERROR - ETL process failed: time.sleep() takes exactly one argument (0 given)
+2025-04-30 17:17:38,316 - INFO - Connected to DB: ('PostgreSQL 16.8 (Ubuntu 16.8-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit',)
+2025-04-30 17:17:38,341 - INFO - Tables in the database: ['global_housing', 'data_movie_lens', 'item_movie_lens', 'user_movie_lens']
+2025-04-30 17:17:38,347 - INFO - Starting ETL process...
+2025-04-30 17:17:55,766 - INFO - Data downloaded successfully.
+2025-04-30 17:18:06,125 - INFO - Extracted data from file: ../ml-100k-data/data_movie_lens.csv
+2025-04-30 17:18:06,208 - INFO - Converted 'timestamp' column in data_movie_lens to datetime.
+2025-04-30 17:18:09,079 - INFO - data_movie_lens fully reloaded with 100000 rows.
+2025-04-30 17:18:19,091 - INFO - Extracted data from file: ../ml-100k-data/item_movie_lens.csv
+2025-04-30 17:18:19,117 - INFO - Cleaned 'movie_title' column in item_movie_lens.
+2025-04-30 17:18:19,225 - INFO - Latest release_date in item_movie_lens: 1998-10-23 00:00:00
+2025-04-30 17:18:19,288 - INFO - item_movie_lens: Filtered to 0 new unique rows after 1998-10-23 00:00:00
+2025-04-30 17:18:19,290 - WARNING - No new data to load for item_movie_lens. Skipping...
+2025-04-30 17:18:32,316 - INFO - Extracted data from file: ../ml-100k-data/user_movie_lens.csv
+2025-04-30 17:18:32,405 - INFO - user_movie_lens fully reloaded with 943 rows.
+2025-04-30 17:18:32,406 - INFO - ETL process completed successfully.

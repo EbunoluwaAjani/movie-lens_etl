@@ -9764,3 +9764,99 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'gdown'
 [2025-04-28T15:30:39.338+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/movie_dags.py
 [2025-04-28T15:30:39.367+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/movie_dags.py took 0.086 seconds
+[2025-04-28T15:31:12.116+0000] {processor.py:161} INFO - Started process (PID=4459) to work on /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:31:12.133+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/movie_dags.py for tasks to queue
+[2025-04-28T15:31:12.138+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:31:12.137+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:31:12.376+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:31:12.365+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/movie_dags.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/movie_dags.py", line 9, in <module>
+    from etl.etl import download_data, load
+  File "/opt/airflow/etl/etl.py", line 6, in <module>
+    import gdown
+ModuleNotFoundError: No module named 'gdown'
+[2025-04-28T15:31:12.379+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:31:12.425+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/movie_dags.py took 0.323 seconds
+[2025-04-28T15:31:45.163+0000] {processor.py:161} INFO - Started process (PID=4515) to work on /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:31:45.165+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/movie_dags.py for tasks to queue
+[2025-04-28T15:31:45.167+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:31:45.166+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:31:45.215+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:31:45.207+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/movie_dags.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/movie_dags.py", line 9, in <module>
+    from etl.etl import download_data, load
+  File "/opt/airflow/etl/etl.py", line 6, in <module>
+    import gdown
+ModuleNotFoundError: No module named 'gdown'
+[2025-04-28T15:31:45.218+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:31:45.251+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/movie_dags.py took 0.097 seconds
+[2025-04-28T15:32:17.759+0000] {processor.py:161} INFO - Started process (PID=4572) to work on /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:32:17.760+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/movie_dags.py for tasks to queue
+[2025-04-28T15:32:17.762+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:32:17.761+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:32:17.814+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:32:17.800+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/movie_dags.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/movie_dags.py", line 9, in <module>
+    from etl.etl import download_data, load
+  File "/opt/airflow/etl/etl.py", line 6, in <module>
+    import gdown
+ModuleNotFoundError: No module named 'gdown'
+[2025-04-28T15:32:17.818+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:32:17.867+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/movie_dags.py took 0.115 seconds
+[2025-04-28T15:32:50.353+0000] {processor.py:161} INFO - Started process (PID=4628) to work on /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:32:50.354+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/movie_dags.py for tasks to queue
+[2025-04-28T15:32:50.356+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:32:50.355+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:32:50.403+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:32:50.394+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/movie_dags.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/movie_dags.py", line 9, in <module>
+    from etl.etl import download_data, load
+  File "/opt/airflow/etl/etl.py", line 6, in <module>
+    import gdown
+ModuleNotFoundError: No module named 'gdown'
+[2025-04-28T15:32:50.406+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:32:50.438+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/movie_dags.py took 0.092 seconds
+[2025-04-28T15:33:23.020+0000] {processor.py:161} INFO - Started process (PID=4684) to work on /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:33:23.022+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/movie_dags.py for tasks to queue
+[2025-04-28T15:33:23.024+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:33:23.023+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:33:23.067+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:33:23.058+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/movie_dags.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/movie_dags.py", line 9, in <module>
+    from etl.etl import download_data, load
+  File "/opt/airflow/etl/etl.py", line 6, in <module>
+    import gdown
+ModuleNotFoundError: No module named 'gdown'
+[2025-04-28T15:33:23.070+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:33:23.108+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/movie_dags.py took 0.096 seconds
+[2025-04-28T15:33:56.016+0000] {processor.py:161} INFO - Started process (PID=4739) to work on /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:33:56.018+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/movie_dags.py for tasks to queue
+[2025-04-28T15:33:56.020+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:33:56.020+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:33:56.070+0000] {logging_mixin.py:188} INFO - [2025-04-28T15:33:56.058+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/movie_dags.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/movie_dags.py", line 9, in <module>
+    from etl.etl import download_data, load
+  File "/opt/airflow/etl/etl.py", line 6, in <module>
+    import gdown
+ModuleNotFoundError: No module named 'gdown'
+[2025-04-28T15:33:56.073+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/movie_dags.py
+[2025-04-28T15:33:56.113+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/movie_dags.py took 0.103 seconds
